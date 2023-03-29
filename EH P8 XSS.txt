@@ -1,0 +1,75 @@
+### Reflected XSS (Non-Persistent) :
+
+- low security : 
+- use of script tag
+	- **Ex.** `<script>alert("Your Web Application Hacked")</script>`
+
+- Medium security :
+- use nested script
+	- **Ex.** `<scr<script>ipt>alert("Your Web Application Hacked")</script>`
+- Try to case sensivite:
+	- **Ex.** `<Script>alert("Your Web Application Hacked")</Script>`
+
+- High security :
+- use HTML event
+	- **Ex.** `<img src=x onMouseOver=alert("Your Hacked")>`
+
+================================================================
+
+### Stored XSS (Persistent):
+
+**low level security :** 
+
+- Enter the name and message in input field , click on sign guestbook then it will show output below .
+- press ctrl+U then searching for name and message both are reflecting in code.
+- Since both are reflecting in the browser so both these fields may be vulnerable to Stored XSS attack.
+- Now our last step is to fire the XSS payload into either of these two input fields. I am using a very basic XSS payload Ex.`<script>alert("Hack using Stored XSS")</script>` in Message field. Click on Sign Guestbook to submit the message. If this site is vulnerable to stored XSS vulnerability then we will get a popup when we refresh this page.
+
+- When I refreshed this same page I got an XSS alert box. This box confirms that this site is vulnerable to stored XSS attacks.
+- Now each time we refresh the same page we will get this alert box because our XSS payload is stored in the Guestbook. 
+
+
+**Medium level security :** 
+
+- We will follow the same steps as we have followed at low level security. First of all input some unique strings into Name and Message field.
+- use nested script also use for name and message field by changing the their input box maxlength using inspect mode
+	- **Ex.** `<scr<script>ipt>alert("Your Web Application Hacked")</script>`
+- Try to case sensivite also for name and message field by changing the their input box maxlength using inspect mode 
+	- **Ex.** `<Script>alert("Your Web Application Hacked")</Script>`
+ 
+
+- **High level security :**.
+
+- follow the basic step for name and message the apply the script after changes in input field maxlength.
+- use HTML event in name field
+	- **Ex.** `<img src="image.gif" onerror=alert()>`
+
+==============================================================
+
+
+
+### XSS DOM :
+
+- **low level security :** 
+- select the low level security them click on select button after thet go to the url after # symbol type script Ex.http://localhost/dvwa/vulnerabilities/xss_d/?default=English#`<script>alert("XSS DOM")</script>' and refresh the page popup will appears
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
